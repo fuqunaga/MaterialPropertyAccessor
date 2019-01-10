@@ -20,6 +20,7 @@ namespace MaterialPropertyAccessor
             public class RangeData
             {
                 public string name;
+				public float value;
                 public float min;
                 public float max;
             }
@@ -75,6 +76,7 @@ namespace MaterialPropertyAccessor
                                     var rangeData = new PropertySet.RangeData()
                                     {
                                         name = name,
+										value = _material.GetFloat( ShaderUtil.GetPropertyName(shader,i) ),
                                         min = ShaderUtil.GetRangeLimits(shader, i, 1),
                                         max = ShaderUtil.GetRangeLimits(shader, i, 2),
                                     };
